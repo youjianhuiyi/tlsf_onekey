@@ -100,7 +100,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 
 # step 5: 重启服务器完成后，执行一键执行环境下载
-cd ~ && git clone https://gitee.com/yulinzhihou/docker_tlsf.git tlsf && chmod -R 777 ~/tlsf && cd ~/tlsf/aliyun && cp env-example .env
+cd ~ && git clone https://gitee.com/yulinzhihou/tlsf_onekey.git tlsf && chmod -R 777 ~/tlsf && cd ~/tlsf && cp env-example .env
 # step 6: 执行部署命令,一键安装环境，等待10-20分钟左右，出现
 docker-compose up -d
 
@@ -111,6 +111,19 @@ Creating tlsf_tlbbdb_1      ... done
 Creating tlsf_webdb_1       ... done
 Creating tlsf_webdb_1       ... 
 Creating tlsf_game_server_1 ... done
+
+# step 6: 复制相关配置文件从主机到docker容器里面
+docker cp tlbb.tar.gz tlsf_server_1:/home
+cd ~/tlsf/scripts && ./ssh-server.sh
+cd /home && tar zxf tlbb.tar.gz -C /home && rm -rf /home/tlbb.tar.gz
+#
+cd ~/tlsf/scripts && ./modify_ini_config.sh
+cd ~/tlsf/scripts && ./ssh-server.sh
+cd /home && tar zxf ini.tar.gz -C /home/tlbb/Server/Config && chmod -R 777 /home && chown -R root:root /home && rm -rf /home/ini.tar.gz
+#
+docker cp billingSer.tar.gz tlsf_server_1:/home
+cd ~/tlsf/scripts && ./ssh-server.sh
+cd /home && tar zxf billingSer.tar.gz -C /home/billing && chmod -R 777 /home && chown -R root:root /home && rm -rf /home/billingSer.tar.gz
 ```
 
 
