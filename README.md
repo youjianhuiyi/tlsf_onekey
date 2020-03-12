@@ -123,7 +123,7 @@ cd /home && tar zxf ini.tar.gz -C /home/tlbb/Server/Config && chmod -R 777 /home
 #
 docker cp billingSer.tar.gz tlsf_server_1:/home
 cd ~/tlsf/scripts && ./ssh-server.sh
-cd /home && tar zxf billingSer.tar.gz -C /home/billing && chmod -R 777 /home && chown -R root:root /home && rm -rf /home/billingSer.tar.gz
+mkdir -p /home/billing && tar zxf billingSer.tar.gz -C /home/billing && chmod -R 777 /home && chown -R root:root /home && rm -rf /home/billingSer.tar.gz
 ```
 
 
