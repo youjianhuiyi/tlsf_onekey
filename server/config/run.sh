@@ -3,12 +3,13 @@ ulimit -n 65535
 if ps aux | grep -w "./ShareMemory" | grep -v grep >/dev/null 2>&1;then
   echo " ShareMemory  is running !!!!!!"
 else
-  ###### start ShareMemory ######
+  ###### start billing ######
   cd /home/billing
   ./billing & >/dev/null 2>&1
   echo " start billing ......"
 
   sleep 30
+  echo " billing started completely !!!!!!"
   ###### start ShareMemory ######
 
   cd /home/tlbb/Server/
