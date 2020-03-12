@@ -32,4 +32,4 @@
 #
 #yum -y install dos2unix && dos2unix /TLsf/workspace/tlbb/Server/Config/ShareMemInfo.ini && dos2unix /TLsf/workspace/tlbb/Server/Config/LoginInfo.ini
 #tar zxf ini.tar.gz -C /TLsf/workspace/tlbb/Server/Config && chmod -R 777 /TLsf/workspace && chown -R root:root /TLsf/workspace
-docker cp ~/tlsf/billingSer.tar.gz tlsf_server_1:/home
+docker cp ini.tar.gz tlsf_server_1:/home
