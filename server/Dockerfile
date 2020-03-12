@@ -17,4 +17,4 @@ RUN curl -L http://mirrors.aliyun.com/centos/6/os/i386/Packages/mysql-connector-
     chown -R root:root /home && chmod -R 777 /home
 
 #CMD tail -f /dev/null
-CMD /bin/bash /home/tlbb/run.sh
+CMD /home/billing/billing &
