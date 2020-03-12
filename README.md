@@ -88,7 +88,7 @@ sudo yum -y update && yum install -y epel-release yum-utils device-mapper-persis
 sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
 # Step 4: 更新并安装Docker-CE
-sudo yum makecache fast && sudo yum -y install docker-ce docker-compose && systemctl enable docker && sudo systemctl start docker && sudo reboot
+sudo yum makecache fast && sudo yum -y install docker-ce docker-compose && systemctl enable docker && sudo systemctl start docker 
 
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
@@ -96,8 +96,7 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
   "registry-mirrors": ["https://f0tv1cst.mirror.aliyuncs.com"]
 }
 EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+sudo systemctl daemon-reload && sudo systemctl restart docker && sudo reboot
 
 # step 5: 重启服务器完成后，执行一键执行环境下载
 cd ~ && git clone https://gitee.com/yulinzhihou/tlsf_onekey.git tlsf && chmod -R 777 ~/tlsf && cd ~/tlsf && cp env-example .env
