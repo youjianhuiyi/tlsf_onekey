@@ -16,5 +16,4 @@ RUN curl -L http://mirrors.aliyun.com/centos/6/os/i386/Packages/mysql-connector-
     rm -f /tmp/mysql-connector-odbc-5.1.5r1144-7.el6.i686.rpm && \
     chown -R root:root /home && chmod -R 777 /home
 
-#CMD tail -f /dev/null
-CMD /home/billing/billing &
+CMD tail -f /dev/null
