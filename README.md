@@ -1,8 +1,6 @@
 ## 全新手工架设环境开服食用指南
 
-### 告别虚拟机开服🎉，告别win机装虚拟机开服🎉，告别win机+Linux机开服🎉。没错你没听错🎉，只需要一个Linux机就可以开服。市面上最小开服的配置机器即可开服🎉。
-
-### 唯一群号：826717146
+### 告别虚拟机开服🎉，告别win机装虚拟机开服🎉，告别win机+Linux机开服🎉。是的你没听错🎉，只需要一个Linux机就可以开服。市面上最小开服的配置机器即可开服🎉。接下来，详细的配置过程如下，有技术问题可以加群：826717146
 
 - #### 先装一个最新的centos7.x系统64位以上（不支持CentOs6）。系统安装过程不进行演示，系统安装完成后执行以下几条命令。
 
@@ -82,7 +80,7 @@ Cpu(s):  7.0%us,  3.2%sy,  0.0%ni, 89.7%id,  0.0%wa,  0.0%hi,  0.1%si,  0.0%st
 systemctl stop firewalld && systemctl disable firewalld && sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config
 
 # step 2: 更新系统组件并安装必要的一些系统工具
-sudo yum -y update && yum install -y epel-release yum-utils device-mapper-persistent-data lvm2 wget git vim
+sudo yum -y update && yum install -y epel-release yum-utils wget git vim
 
 # Step 3: 添加软件源信息
 sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
